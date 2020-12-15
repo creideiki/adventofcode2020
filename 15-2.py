@@ -8,13 +8,14 @@ for problem in problems:
     for pos in range(len(numbers)):
         seen[numbers[pos]] = [pos] + seen.get(numbers[pos], [])
 
+    last = numbers[-1]
     for pos in range(len(numbers), 30000000):
-        if len(seen[numbers[pos - 1]]) == 1:
-            numbers.append(0)
+        if len(seen[last]) == 1:
+            last = 0
             seen[0] = [pos] + seen.get(0, [])[0:1]
         else:
-            age = seen[numbers[pos - 1]][0] - seen[numbers[pos - 1]][1]
-            numbers.append(age)
+            age = seen[last][0] - seen[last][1]
+            last = age
             seen[age] = [pos] + seen.get(age, [])[0:1]
 
-    print(numbers[-1])
+    print(last)
