@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 num_valid = 0
 
 File.readlines('2.input').each do |row|

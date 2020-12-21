@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 num_valid = 0
 
 f = open('2.input')
