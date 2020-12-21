@@ -16,4 +16,4 @@ File.readlines('2.input').each do |row|
   end
 end
 
-print num_valid
+print num_valid, "\n"
